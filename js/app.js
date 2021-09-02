@@ -13,6 +13,7 @@ const searchText = searchField.value;
 searchField.value = '';
 
 // value null 
+document.getElementById('search-noFound').style.display = "none";
 document.getElementById('search-noFound1').style.display = "none";
 document.getElementById('search-result').innerHTML = '';
 document.getElementById("results-count").innerText = '';
@@ -32,7 +33,7 @@ console.log(url)
 fetch(url)
 .then(res => res.json())
 .then(data => displaySearchResult(data));
-document.getElementById('search-noFound1').style.display = "none";
+// document.getElementById('search-noFound1').style.display = "none";
 }
 
 }
