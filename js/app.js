@@ -51,11 +51,21 @@ const displaySearchResult =(docs)=>{
 
     // dynamic api part 
     docs.docs.forEach(book =>{
+
+        // image display 
+        let image;
+        if(book.cover_i === undefined){
+            image = "img/one.jpg";
+        }
+        else{
+            image = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
+        }
+
         const div = document.createElement('div')
         div.classList.add('col')
         div.innerHTML = `
-        <div class="card">
-                <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="...">
+        <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                <img src=${image} class="card-img-top" alt="...">
             <div class="card-body">
                 <h4 class="card-title">Book Title: ${book.title ?book.title :''}</h4>
                 <h5 class="">Author Name: ${book.author_name ?book.author_name :''}</h5>
@@ -71,3 +81,5 @@ const displaySearchResult =(docs)=>{
     spinner('none');
 
 }
+
+
