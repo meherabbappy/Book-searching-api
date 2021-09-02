@@ -64,7 +64,7 @@ const displaySearchResult =(docs)=>{
         const div = document.createElement('div')
         div.classList.add('col')
         div.innerHTML = `
-        <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="card h-100 shadow-lg p-3 mb-5 bg-white rounded">
                 <img src=${image} class="card-img-top" alt="...">
             <div class="card-body">
                 <h4 class="card-title">Book Title: ${book.title ?book.title :''}</h4>
